@@ -1,0 +1,11 @@
+Description=PPPOE Client API
+
+[Service]
+Type=simple
+#Environment='APP_RESTART_PPPOE=/usr/bin/pppoe-stop && /usr/bin/pppoe-stop' 'APP_START_PPPOE=/usr/bin/pppoe-start' 'APP_STOP_PPPOE=/usr/bin/pppoe-stop'
+Environment='APP_RESTART_PPPOE=ls' 'APP_START_PPPOE=pwd' 'APP_STOP_PPPOE=echo 123'
+ExecStart=/usr/bin/python3 /opt/pppoe-client-api/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

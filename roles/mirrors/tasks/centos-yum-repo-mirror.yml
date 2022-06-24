@@ -1,0 +1,6 @@
+- name: "download {{yum_repo_file_url}} to {{ yum_repo_file_path }}"
+  get_url:
+    url: "{{ yum_repo_file_url }}"
+    dest: "{{ yum_repo_file_path }}"
+    force: yes
+    backup: yes

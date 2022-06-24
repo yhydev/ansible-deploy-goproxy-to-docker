@@ -1,0 +1,21 @@
+- name: install flask
+  pip: name=flask executable=pip3.6
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+- name: download code
+  git:
+    repo: https://hub.fastgit.xyz/yhydev/pppoe-client-docker.git
+    dest: /opt/pppoe-client-api
+    force: yes
+- name: copy service template
+  template:
+    src: pppoe-client-api.service.j2
+    dest: /lib/systemd/system/pppoe-client-api.service
+- name: enabled pppoe-client-api service
+  service:
+    name: pppoe-client-api
+    enabled: yes
+- name: start pppoe-client-api service
+  service:
+    name: pppoe-client-api
+    state: started

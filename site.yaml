@@ -1,0 +1,13 @@
+- hosts: all
+  collections:
+   - yhydev.deploy_docker
+  roles:
+  - role: mirrors
+  - role: darkwizard242.python3
+  - role: geerlingguy.pip
+  - role: buluma.setuptools
+  - role: install-pppoe-api
+  - role: init-docker-daemon
+  - role: install-docker
+  - role: enable-docker
+  - role: deploy-goproxy-container

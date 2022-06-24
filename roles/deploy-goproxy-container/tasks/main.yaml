@@ -1,0 +1,12 @@
+- name: Pip Install docker
+  pip: name=docker executable=pip3.6
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+- name: deploy goproxy
+  community.docker.docker_container:
+    name: goproxy
+    state: started
+    image: c18s/goproxy
+    command: proxy socks -t tcp -p 0.0.0.0:1080 --dns-address "121.4.173.6:53"
+  vars:
+    ansible_python_interpreter: /usr/bin/python3

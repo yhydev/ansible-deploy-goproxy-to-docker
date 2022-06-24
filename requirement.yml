@@ -1,0 +1,10 @@
+collections:
+  - name: https://github.com/yhydev/ansible-deploy-docker.git
+    type: git
+    version: main
+  - name: nginxinc.nginx_core
+    version: 0.6.0
+roles:
+  - name: darkwizard242.python3
+  - name: geerlingguy.pip
+  - name: buluma.setuptools

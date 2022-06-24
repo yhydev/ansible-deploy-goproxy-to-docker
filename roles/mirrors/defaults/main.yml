@@ -1,0 +1,6 @@
+---
+update_centos7_yum_base_repo_file: yes
+centos7_yum_base_repo_file_url: https://mirrors.aliyun.com/repo/Centos-7.repo
+
+update_centos7_yum_docker_ce_repo_file: yes
+centos7_yum_docker_ce_repo_file_url: https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
