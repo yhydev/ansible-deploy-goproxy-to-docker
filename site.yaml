@@ -1,4 +1,6 @@
 - hosts: all
+  vars:
+    extra_args: "-i https://pypi.tuna.tsinghua.edu.cn/simple"
   collections:
    - yhydev.deploy_docker
   roles:

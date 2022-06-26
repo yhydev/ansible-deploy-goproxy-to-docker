@@ -1,5 +1,5 @@
 - name: Pip Install docker
-  pip: name=docker executable=pip3.6
+  pip: name=docker executable=pip3.6 extra_args="{{ pip_extra_args }}"
   vars:
     ansible_python_interpreter: /usr/bin/python3
 - name: deploy goproxy

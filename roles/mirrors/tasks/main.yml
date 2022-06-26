@@ -8,3 +8,11 @@
   vars:
     yum_repo_file_url: "{{ centos7_yum_docker_ce_repo_file_url }}"
     yum_repo_file_path: /etc/yum.repos.d/docker-ce.repo
+- include_tasks: centos-yum-repo-mirror.yml
+  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == "7" and update_centos7_yum_epel_repo_file
+  vars:
+    yum_repo_file_url: "{{ centos7_yum_epel_repo_file_url }}"
+    yum_repo_file_path: /etc/yum.repos.d/epel.repo
+- name: "yum makecache"
+  shell: "yum clean all && yum makecache"
+  when: ansible_distribution == 'CentOS'
