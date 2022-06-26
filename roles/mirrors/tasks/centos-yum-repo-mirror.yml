@@ -1,6 +1,10 @@
 - name: "download {{yum_repo_file_url}} to {{ yum_repo_file_path }}"
+  register: yum_repo_update_result
   get_url:
     url: "{{ yum_repo_file_url }}"
     dest: "{{ yum_repo_file_path }}"
     force: yes
     backup: yes
+- name: "yum makecache"
+  shell: "yum clean all && yum makecache"
+  when: ansible_distribution == 'CentOS' and yum_repo_update_result.changed
