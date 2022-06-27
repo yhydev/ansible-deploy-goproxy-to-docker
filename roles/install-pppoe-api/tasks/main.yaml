@@ -1,3 +1,5 @@
+- name: Install Git
+  package: name=git
 - name: install flask
   pip: name=flask executable=pip3.6 extra_args="{{ pip_extra_args }}"
   vars:

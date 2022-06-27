@@ -6,7 +6,9 @@
   community.docker.docker_container:
     name: goproxy
     state: started
-    image: c18s/goproxy
+    image: 40up3346.mirror.aliyuncs.com/c18s/goproxy
     command: proxy socks -t tcp -p 0.0.0.0:1080 --dns-address "121.4.173.6:53"
+    ports:
+    - 1080:1080
   vars:
     ansible_python_interpreter: /usr/bin/python3

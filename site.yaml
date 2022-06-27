@@ -12,3 +12,5 @@
   - role: install-docker
   - role: enable-docker
   - role: deploy-goproxy-container
+    vars:
+      pip_extra_args: -i https://mirrors.aliyun.com/pypi/simple/
